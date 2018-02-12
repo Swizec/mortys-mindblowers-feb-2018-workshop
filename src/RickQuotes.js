@@ -24,6 +24,9 @@ const QUOTES = [
     "Wubba Lubba Dub Dub!"
 ];
 
-const RickQuotes = ({ index }) => <h2>{QUOTES[index % QUOTES.length]}</h2>;
+// props -> { index: N }
+const RickQuotes = ({ index }) => (
+    <WhiteH2>{QUOTES[index % QUOTES.length]}</WhiteH2>
+);
 
 export default RickQuotes;

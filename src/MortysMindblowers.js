@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
 import Morty1 from "./mortysegments/1.mp4";
 import Morty2 from "./mortysegments/2.mp4";
@@ -14,6 +15,12 @@ import RickQuotes from "./RickQuotes";
 // import Video from "./Video";
 import SkipButton from "./SkipButton";
 // import ImgurAPI from "./ImgurAPI";
+
+const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+`;
 
 class MortysMindblowers extends Component {
     state = {
@@ -60,10 +67,10 @@ class MortysMindblowers extends Component {
         const { gifs, index, morty, rickIndex } = this.state;
 
         return (
-            <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+            <Column>
                 <RickQuotes index={rickIndex} />
                 <SkipButton onClick={this.next} />
-            </div>
+            </Column>
         );
     }
 }
