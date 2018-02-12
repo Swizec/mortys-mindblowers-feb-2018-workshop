@@ -12,7 +12,7 @@ import Morty9 from "./mortysegments/9.mp4";
 
 import RickQuotes from "./RickQuotes";
 // import Video from "./Video";
-// import Skip from "./SkipButton";
+import SkipButton from "./SkipButton";
 // import ImgurAPI from "./ImgurAPI";
 
 class MortysMindblowers extends Component {
@@ -20,7 +20,8 @@ class MortysMindblowers extends Component {
         gifs: [],
         index: 0,
         page: 0,
-        morty: true
+        morty: true,
+        rickIndex: 5
     };
 
     morties = [
@@ -49,14 +50,19 @@ class MortysMindblowers extends Component {
             : gifs[index].mp4;
     }
 
-    next() {}
+    next = () => {
+        this.setState({
+            rickIndex: this.state.rickIndex + 1
+        });
+    };
 
     render() {
-        const { gifs, index, morty } = this.state;
+        const { gifs, index, morty, rickIndex } = this.state;
 
         return (
             <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-                <RickQuotes />
+                <RickQuotes index={rickIndex} />
+                <SkipButton onClick={this.next} />
             </div>
         );
     }
