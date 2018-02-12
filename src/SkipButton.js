@@ -7,10 +7,4 @@ const Centered = styled.div`
     flex-direction: column;
 `;
 
-const Skip = ({ onClick }) => (
-    <Centered>
-        <button onClick={onClick}>Skip</button>
-    </Centered>
-);
-
 export default Skip;

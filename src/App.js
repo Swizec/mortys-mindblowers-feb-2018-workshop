@@ -24,22 +24,7 @@ const WhiteA = styled.a`
 
 class App extends Component {
     render() {
-        return (
-            <Container>
-                <MortysMindblowers />
-
-                <WhiteP>
-                    Built by Swizec Teller during a{" "}
-                    <WhiteA href="https://www.youtube.com/watch?v=a4g81widnGM">
-                        Livecoding Session
-                    </WhiteA>. Morty's Mindblowers for gifs from Imgur's
-                    frontpage.{" "}
-                    <WhiteA href="https://github.com/Swizec/mortys-mindblowers">
-                        Code on Github
-                    </WhiteA>.
-                </WhiteP>
-            </Container>
-        );
+        return null;
     }
 }
 

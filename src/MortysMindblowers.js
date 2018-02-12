@@ -39,16 +39,7 @@ class MortysMindblowers extends Component {
         this.getGifs();
     }
 
-    async getGifs() {
-        const { page } = this.state,
-            gifs = await ImgurAPI.gifs(page);
-
-        this.setState({
-            gifs,
-            index: 0,
-            page: page + 1
-        });
-    }
+    async getGifs() {}
 
     get currentGif() {
         const { gifs, index, morty } = this.state;
@@ -58,32 +49,15 @@ class MortysMindblowers extends Component {
             : gifs[index].mp4;
     }
 
-    next() {
-        const { index, morty, gifs } = this.state;
-
-        if (index + 1 == gifs.length) {
-            this.getGifs();
-        }
-
-        this.setState({
-            index: morty ? index : index + 1,
-            morty: !morty
-        });
-    }
+    next() {}
 
     render() {
         const { gifs, index, morty } = this.state;
 
         return (
-            <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-                <RickQuotes />
-                <Video
-                    src={this.currentGif}
-                    onEnded={() => this.next()}
-                    onClick={() => (!morty ? this.next() : null)}
-                />
-                {!morty ? <Skip onClick={() => this.next()} /> : null}
-            </div>
+            <div
+                style={{ display: "flex", flexDirection: "column", flex: 1 }}
+            />
         );
     }
 }

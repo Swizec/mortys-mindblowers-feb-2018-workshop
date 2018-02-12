@@ -24,12 +24,4 @@ const QUOTES = [
     "Wubba Lubba Dub Dub!"
 ];
 
-const RickQuotes = () => {
-    const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
-
-    document.title = quote;
-
-    return <WhiteH2>{quote}</WhiteH2>;
-};
-
 export default RickQuotes;
