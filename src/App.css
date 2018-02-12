@@ -1,6 +1,5 @@
-
 body {
-    background: black;
+    background: white;
 }
 
 #root {
@@ -17,6 +16,6 @@ video {
 
 button {
     font-size: 1em;
-    padding: .5em;
+    padding: 0.5em;
     cursor: pointer;
 }

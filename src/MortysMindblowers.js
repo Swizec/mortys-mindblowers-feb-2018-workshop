@@ -11,9 +11,9 @@ import Morty8 from "./mortysegments/8.mp4";
 import Morty9 from "./mortysegments/9.mp4";
 
 import RickQuotes from "./RickQuotes";
-import Video from "./Video";
-import Skip from "./SkipButton";
-import ImgurAPI from "./ImgurAPI";
+// import Video from "./Video";
+// import Skip from "./SkipButton";
+// import ImgurAPI from "./ImgurAPI";
 
 class MortysMindblowers extends Component {
     state = {
@@ -55,9 +55,9 @@ class MortysMindblowers extends Component {
         const { gifs, index, morty } = this.state;
 
         return (
-            <div
-                style={{ display: "flex", flexDirection: "column", flex: 1 }}
-            />
+            <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+                <RickQuotes />
+            </div>
         );
     }
 }

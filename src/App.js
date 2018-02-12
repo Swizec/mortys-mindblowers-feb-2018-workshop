@@ -24,7 +24,7 @@ const WhiteA = styled.a`
 
 class App extends Component {
     render() {
-        return null;
+        return <MortysMindblowers />;
     }
 }
 

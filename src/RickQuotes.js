@@ -24,4 +24,6 @@ const QUOTES = [
     "Wubba Lubba Dub Dub!"
 ];
 
+const RickQuotes = () => <h2>{QUOTES[0]}</h2>;
+
 export default RickQuotes;
