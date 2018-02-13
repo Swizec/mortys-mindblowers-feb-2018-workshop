@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import Morty1 from "./mortysegments/1.mp4";
 import Morty2 from "./mortysegments/2.mp4";
@@ -84,5 +85,36 @@ class MortysMindblowers extends Component {
         );
     }
 }
+
+// The manual way
+// class ConnectedMortysMindblowers extends React.Component {
+//     componentDidMount() {
+//         const { store } = this.context;
+
+//         this.unsubscribe = store.subscribe(() => {
+//             this.forceUpdate();
+//         });
+//     }
+
+//     componentWillUnmount() {
+//         this.unsubscribe();
+//     }
+
+//     next = () => this.context.store.dispatch(nextAction());
+
+//     render() {
+//         const { store } = this.context,
+//             { rickIndex } = store.getState();
+
+//         return (
+//             <MortysMindblowers rickIndex={rickIndex} nextAction={this.next} />
+//         );
+//     }
+// }
+// ConnectedMortysMindblowers.contextTypes = {
+//     store: PropTypes.object
+// };
+
+// export default ConnectedMortysMindblowers;
 
 export default connect(mapStateToProps, mapDispatchProps)(MortysMindblowers);
