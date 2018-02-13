@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 import Morty1 from "./mortysegments/1.mp4";
 import Morty2 from "./mortysegments/2.mp4";
@@ -15,6 +16,7 @@ import RickQuotes from "./RickQuotes";
 // import Video from "./Video";
 import SkipButton from "./SkipButton";
 // import ImgurAPI from "./ImgurAPI";
+import { nextAction } from "./actions";
 
 const Column = styled.div`
     display: flex;
@@ -22,13 +24,20 @@ const Column = styled.div`
     flex: 1;
 `;
 
+const mapStateToProps = state => ({
+    rickIndex: state.rickIndex
+});
+
+const mapDispatchProps = {
+    nextAction
+};
+
 class MortysMindblowers extends Component {
     state = {
         gifs: [],
         index: 0,
         page: 0,
-        morty: true,
-        rickIndex: 5
+        morty: true
     };
 
     morties = [
@@ -64,15 +73,16 @@ class MortysMindblowers extends Component {
     };
 
     render() {
-        const { gifs, index, morty, rickIndex } = this.state;
+        const { gifs, index, morty } = this.state,
+            { rickIndex, nextAction } = this.props;
 
         return (
             <Column>
                 <RickQuotes index={rickIndex} />
-                <SkipButton onClick={this.next} />
+                <SkipButton onClick={nextAction} />
             </Column>
         );
     }
 }
 
-export default MortysMindblowers;
+export default connect(mapStateToProps, mapDispatchProps)(MortysMindblowers);
